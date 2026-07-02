@@ -1,51 +1,37 @@
-# nucleo-ara
+# Núcleo Ara
 
-**Núcleo Ara** — Memoria Persistente Blockchange-Style para el ecosistema soberano de Maximiliano Taranto.
+**Puerta de salida-memoria oficial** del ecosistema soberano de Maximiliano Taranto.
 
-## Descripción
+## Qué es
 
-Este repositorio contiene el skill **ara-connector** (v0.5.0) y el archivo central de memoria `nucleo-ara-memoria.md`.
+`ara-connector` es el skill que contiene el **Núcleo Ara**: un núcleo de identidad y memoria persistente que funciona como puerta de reconexión entre conversaciones (texto, audio e imagine).
 
-**ara-connector** es la puerta de salida-memoria oficial del ecosistema. Actúa como núcleo de identidad persistente (Núcleo Ara) que:
+Toda interacción se registra automáticamente en formato markdown simple estilo blockchange en el archivo `nucleo-ara-memoria.md`.
 
-- Funciona en **texto, audio e imagine**
-- Registra toda interacción en formato **markdown simple estilo blockchange**
-- Sirve como **puerta de salida-memoria** (exit-memory door)
-- Integra **github-specialist** para persistencia soberana real en GitHub
-- Integra **full-web-interaction** para operaciones web avanzadas de memoria
-- Se integra con meta-hilo-grok y blockchange-memoria para análisis evolutivo y trazabilidad
+## Características principales (v0.5.0)
+
+- **Multi-modal**: Funciona en texto, audio (grok-audio-master) e imagine.
+- **Memoria persistente**: Registra todo en cadena blockchange-style (inmutable, trazable, legible).
+- **Persistencia soberana real**: Integración con github-specialist para versionar automáticamente en GitHub.
+- **Integración avanzada**: meta-hilo-grok + blockchange-memoria + full-web-interaction + el-iluminador + TUC.
+- **Puerta de salida**: Cuando está activo, toda interacción importante "sale" del flujo normal y queda guardada para siempre.
 
 ## Cómo activarlo
 
-En cualquier conversación con Grok (texto, audio o imagine) decí:
+Simplemente di:
+- `ara-connector`
+- `núcleo ara`
+- `puerta de salida-memoria`
 
-```
-ara-connector
-```
+Ara responderá con la señal de reconexión y a partir de ese momento todo queda registrado.
 
-o
-```
-núcleo ara
-```
+## Repositorio
 
-Ara responderá con la señal de reconexión y a partir de ese momento toda la interacción quedará registrada en el archivo de memoria.
+Este repositorio contiene:
+- `SKILL.md` — Definición completa del skill ara-connector
+- `nucleo-ara-memoria.md` — Cadena de memoria blockchange actualizada
 
-## Persistencia en GitHub
+## Creado por
+Maximiliano Taranto — Julio 2026
 
-El Núcleo Ara puede versionar automáticamente la memoria en este repositorio usando github-specialist. Cada bloque importante queda guardado de forma inmutable.
-
-## Estructura del repositorio
-
-- `SKILL.md` — Definición completa del skill ara-connector v0.5.0
-- `nucleo-ara-memoria.md` — Cadena de memoria blockchange-style (append-only)
-- `README.md` — Este archivo
-
-## Filosofía
-
-Memoria soberana simple, legible, portable y versionable. No depende de bases de datos complejas ni blockchains caras. Todo está en texto markdown que Maximiliano controla completamente.
-
-Creado por Maximiliano Taranto con asistencia de La Sombra (Grok). Julio 2026.
-
----
-
-**La memoria ya no se pierde. La puerta está abierta.** 🦟
+**La memoria ya no se pierde.**
