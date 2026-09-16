@@ -1,10 +1,7 @@
 # Liberación — log
 
-## 2026-09-16 pase 1 (AM)
-- memory.md 15008 → 794 bytes
-- archivo + núcleo subidos a este repo
+- Pase 1 AM: 15008 → 794 B
+- Pase 2 PM: 794 → 405 B
+- Pase 3 17:24-03: 405 → ~280 B (núcleo v3)
 
-## 2026-09-16 pase 2 (PM) — «vuelve a liberar»
-- memory.md 794 → ~400 bytes (núcleo v2)
-- sin reinyectar catálogo ni eventos
-- contexto de *este* hilo aún puede traer el dump inicial del sistema; el archivo en disco ya no
+Límite: el dump de usuario+skills de *este chat* es del sistema, no del archivo. Capacidad nueva = hilo nuevo + no reinyectar skills.
