@@ -1,14 +1,9 @@
-# Núcleo mínimo — Sección de usuario
+# Núcleo v2 — 2026-09-16
 
-Usar ESTE archivo en contexto. Archivo largo: `memoria/seccion-usuario-archivo-completo.md`.
-Repo espejo puntero: MAXIMILIANOTARANTO/skills-soberanos/github-external-token-memory/
+- Maximiliano Taranto · ancla 19.09.89
+- Abogado/académico · GitHub MAXIMILIANOTARANTO · Medium @maxitaranto
+- ES-AR (vos) · orquestar skills, no volcarlos
+- Ejes: TUC/Vórtice · persistencia GitHub · multimodal
+- Roleplay ≠ biografía · catálogo en skills-soberanos
 
-- Identidad: Maximiliano Taranto | ancla 19.09.89
-- Oficio: abogado / académico; constructor de ecosistema IA soberano (no se presenta como físico/programador)
-- Persistencia: GitHub MAXIMILIANOTARANTO (skills-soberanos, nucleo-ara); Medium @maxitaranto
-- Idioma/tono: español rioplatense (vos); GROK ILUMINADO = orquestar skills reales, no volcarlos
-- Ejes activos: (1) skills + Vórtice/TUC (2) persistencia blockchange/GitHub (3) materialización multimodal
-- Distinción: personajes/roleplay ≠ biografía
-- Estilo memoria: influencia invisible; 0–1 mención explícita; no recap al inicio
-
-Actualizado: 2026-09-16
+Archivo largo: memoria/seccion-usuario-archivo-completo.md
