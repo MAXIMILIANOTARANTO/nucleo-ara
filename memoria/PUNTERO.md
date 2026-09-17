@@ -1,6 +1,7 @@
-# Puntero de liberación
+# Puntero runtime
 
-- Núcleo (contexto): memoria/seccion-usuario-nucleo.md
-- Archivo (biblioteca): memoria/seccion-usuario-archivo-completo.md
-- Fecha migración: 2026-09-16
-- Skills: maestro-liberacion-tokens + ecosistema-orchestrator + github-specialist
+- Skill: maestro-liberacion-tokens
+- Repo: MAXIMILIANOTARANTO/nucleo-ara
+- Cuerpo: skills/maestro-liberacion-tokens/SKILL.md
+- Log: memoria/LIBERACION-LOG.md
+- Fecha: 2026-09-17
