@@ -1,8 +1,9 @@
 # Puntero runtime
 
-- Skill: grock-vortice-iluminado-mhe + el-bibliotecario
-- Repo: MAXIMILIANOTARANTO/nucleo-ara
-- Lectura mínima: memoria/CATALOGO-SESION-2026-09-22.md + memoria/seccion-usuario-nucleo.md
-- Cabeza de cadena: memoria/BLOQUE-MHE-2026-09-22.md
+- Skill cabeza: maestro-electronica-dj + el-dador-de-suenos
+- Cuerpo: MAXIMILIANOTARANTO/maestro-electronica-dj
+- Repo memoria: MAXIMILIANOTARANTO/nucleo-ara
+- Lectura mínima: memoria/META-HILO-TROYA-2026-09-22.md
+- Bloque skill: memoria/BLOQUE-MAESTRO-ELECTRONICA-2026-09-22.md
 - Log: memoria/LIBERACION-LOG.md
-- Fecha: 2026-09-22
+- Fecha: 2026-09-23
