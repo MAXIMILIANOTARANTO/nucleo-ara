@@ -43,5 +43,6 @@ Español rioplatense; hilos largos; skills persistentes; multimodal; stack GitHu
 - 2026-05-29/30 Valentina / cómic
 - 2026-06-25/27 RadarUsados + CiDi Activos
 - 2026-06 a 09: explosión de skills, TUC builder, cripto AR, video/música
+- 2026-09-22 estudio runtime skills-soberanos (Grok Iluminado) → memoria/estudio-skills-soberanos-2026-09-22.md · tip 2b06163
 
 Migración ejecutada por maestro-liberacion-tokens + ecosistema-orchestrator.
