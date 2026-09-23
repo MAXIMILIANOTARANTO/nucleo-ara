@@ -1,11 +1,8 @@
 # Puntero runtime
 
-- Skill: github-specialist + memoria-blockchange + el-iluminador + ecosistema-orchestrator
+- Skill: grock-vortice-iluminado-mhe + el-bibliotecario
 - Repo: MAXIMILIANOTARANTO/nucleo-ara
-- Cuerpo skills: skills/github-specialist/SKILL.md
-- Nodos: memoria/NODOS-ACTIVACION.md
+- Lectura mínima: memoria/CATALOGO-SESION-2026-09-22.md + memoria/seccion-usuario-nucleo.md
+- Cabeza de cadena: memoria/BLOQUE-MHE-2026-09-22.md
 - Log: memoria/LIBERACION-LOG.md
-- Estudio: memoria/estudio-skills-soberanos-2026-09-22.md
-- Texto: memoria/MEMORIA-TEXTO-2026-09-22.md
-- Cabeza de cadena: memoria/BLOQUE-CONTINUACION-2026-09-22.md
 - Fecha: 2026-09-22
