@@ -1,8 +1,6 @@
 # Puntero runtime
 
 - Cabeza: dj-productor
+- Enlace IA: https://raw.githubusercontent.com/MAXIMILIANOTARANTO/dj-productor/main/PARA_CUALQUIER_IA.md
 - Cuerpo: MAXIMILIANOTARANTO/dj-productor
-- Toma: MAXIMILIANOTARANTO/sistema-toma-sonora
-- Piso: MAXIMILIANOTARANTO/maestro-electronica-dj
-- Memoria: MAXIMILIANOTARANTO/nucleo-ara
 - Fecha: 2026-09-23
