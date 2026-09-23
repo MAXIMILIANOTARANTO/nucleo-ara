@@ -1,10 +1,7 @@
 ---
 name: dj-productor
-description: Kernel. Cuerpo en MAXIMILIANOTARANTO/dj-productor.
+description: Kernel. Cuerpo y subsistemas en MAXIMILIANOTARANTO/dj-productor.
 ---
 
-# DJ Productor — kernel
-
 Cuerpo: https://github.com/MAXIMILIANOTARANTO/dj-productor
-Toma: sistema-toma-sonora. Piso: maestro-electronica-dj.
-Regla: una carpeta por tema. Cierre = FINAL.wav + FINAL.mp3.
+Subsistemas: nucleo, teoria, cabina, estudio, borde.
