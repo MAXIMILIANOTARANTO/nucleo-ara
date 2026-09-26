@@ -1,6 +1,6 @@
-# Puntero
+# Puntero runtime
 
-Cabeza: dj-productor por SUBSISTEMAS
-https://raw.githubusercontent.com/MAXIMILIANOTARANTO/dj-productor/main/SUBSISTEMAS.md
-https://raw.githubusercontent.com/MAXIMILIANOTARANTO/dj-productor/main/PARA_CUALQUIER_IA.md
-Fecha: 2026-09-23
+- Repo: MAXIMILIANOTARANTO/nucleo-ara
+- Log: memoria/LIBERACION-LOG.md
+- Nodos: memoria/NODOS-ACTIVACION.md
+- Fecha: 2026-09-25
