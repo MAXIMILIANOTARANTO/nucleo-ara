@@ -1,5 +1,6 @@
 # Liberacion log (publico)
 
+- 2026-10-05 | L9 Todo: 6 archivos eliminados (BLOQUE-CONTINUACION, ENLACE-IA-DJ-PRODUCTOR, META-HILO-TROYA, NODOS-ACTIVACION, ESPACIO-L7, META-HILO-CONDUCTOR). Árbol memoria: 10 → 4 blobs. Estado = post-liberación extrema. Contexto = puntero + delta + 3 anclas.
 - 2026-10-05 | L8b: 2 archivos más eliminados (BLOQUE-ACTIVACION, estudio). Árbol memoria: 14 → 12 blobs. Estado = post-liberación.
 - 2026-10-05 | L8 liberar tokens: 8 archivos eliminados del ledger (3 Valentina, BLOQUE-CONTINUACION, BLOQUE-MHE, BLOQUE-MAESTRO-ELECTRONICA, BLOQUE-SISTEMA-TOMA, BLOQUE-HILO-ARA-MUNDO-IA, MEMORIA-TEXTO, MANIFEST-L3, ENLACE-IA-DJ-PRODUCTOR, seccion-usuario-archivo-completo, nucleo-ara-memoria). Árbol memoria: 22 → 14 blobs. Estado = post-liberación.
 - 2026-10-04 | L7d revert de L7c: 15 archivos restaurados al ledger. Árbol memoria: 8 → 22 blobs. Estado = pre-liberación.
