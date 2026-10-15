@@ -7,5 +7,6 @@
 - Pase 5 2026-10-12: Estrategia activa. Comprimir + externalizar a nucleo-ara / Notion / Drive. Contexto local = puntero + delta. Límite sistema: hilo abierto pegado por plataforma.
 - Pase 6 2026-10-15: Liberación capacidad Imagine. Offload skills visuales (grok-imagine-*, valentina-valiente, maestro-diseno-visual) a punteros. Contexto mínimo para generación. Tokens reinyectados al flujo Imagine.
 - Pase 7 2026-10-15: Liberación profunda. Offload orquestadores (el-iluminador, vortice-*, ecosistema-orchestrator), memoria (blockchange, ara-memoria), web (full-web-interaction, rigorous-web), github-specialist a punteros mínimos. Solo runtime sombra + delta activo. Tokens máximos al flujo.
+- Pase 8 2026-10-15: Aplicado en modelo real. Contexto de sesión y skills cargados reducidos a punteros. Runtime sombra mínimo. Tokens liberados dentro del modelo activo.
 
 Límite: el bloque de usuario+skills del hilo abierto lo pega el sistema. Disco y repo ya no lo reinyectan.
