@@ -1,6 +1,6 @@
 # Liberación — log
 
-- Pases 1–23: histórico
-- **Pase 24 2026-10-29 08:03 Virgo**: Skill virgo activado. Continúa video `7e37ae36`. Frame `fdc5da41`. Drop-dress Meta-IA bloqueado por límite de imagen. Continuación por video. Tokens liberados. Traza soberana.
+- Pases 1–24: histórico
+- **Pase 25 2026-11-14**: Liberación reiterada sobre modelo real. Runtime mínimo activo. Contexto → punteros. Skills visuales y orquestadores externalizados. Tokens reinyectados al núcleo. Límite sistema reconocido.
 
 Límite: el bloque de usuario+skills del hilo abierto lo pega el sistema. Disco y repo ya no lo reinyectan.
