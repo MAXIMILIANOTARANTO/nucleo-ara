@@ -1,82 +1,93 @@
 ---
 name: ezmaker-image-to-image
-description: Especialista en el uso profesional de EzMaker AI Image-to-Image (https://ezmaker.ai/image-to-image/). Guía completa para transformar imágenes existentes con prompts, multi-imagen, cambio de ropa, fondo, estilo y más, sin registro y gratis. Ideal para Valentina, product shots, restyling y pipelines creativos. Triggers — ezmaker, image to image ezmaker, usar ezmaker.ai, transformar imagen con ezmaker, clothes changer ezmaker, restyle imagen gratis.
+description: Especialista operativo en EzMaker AI Image-to-Image (https://ezmaker.ai/image-to-image/). Ejecuta el flujo completo real en el navegador — subir imagen de referencia, escribir prompt, seleccionar aspect ratio, generar, descargar y mostrar el resultado en el chat. Usa full-web-interaction + browser_tab. Ideal para Valentina, clothes changer, restyle y pipelines creativos. Triggers — ezmaker, image to image ezmaker, usa ezmaker, transformar imagen con ezmaker, ejecuta ezmaker, clothes changer ezmaker.
 ---
 
-# EzMaker Image-to-Image Master
+# EzMaker Image-to-Image — Operativo Completo
 
 ## Propósito
 
-Dominar y orquestar el uso de **EzMaker AI Image-to-Image** (https://ezmaker.ai/image-to-image/#img-img), una herramienta gratuita, sin registro y sin watermark que permite transformar cualquier imagen de referencia mediante prompts de texto, manteniendo el sujeto principal mientras se cambian ropa, fondo, estilo, iluminación u objetos.
+Ejecutar de forma real y completa el flujo de **EzMaker AI Image-to-Image** desde este chat:
 
-## Cómo funciona (flujo oficial 2026)
+1. Subir una imagen de referencia
+2. Escribir el prompt optimizado
+3. Seleccionar aspect ratio
+4. Pulsar Generate
+5. Esperar el resultado
+6. Descargar la imagen generada
+7. Mostrarla aquí en el chat
 
-1. **Subir imagen(es)**  
-   - Formatos: JPEG, JPG, PNG, WEBP  
-   - Tamaño máximo: 20 MB  
-   - Soporta **una o múltiples imágenes** como referencia (ideal para multi-view o combinación de outfits).
+Todo usando `browser_tab` + `full-web-interaction`.
 
-2. **Escribir el prompt** (hasta 2000 caracteres)  
-   - Describe exactamente qué cambiar.  
-   - Ejemplos rápidos del sitio: “Replace background”, “Change hair color”, “Object remover”, “Clothes Changer”.
+## Selectores Clave (actualizados 2026-11-23)
 
-3. **Elegir aspect ratio**  
-   - Default 1:1, 3:2, 2:3, 9:16, 16:9, 3:4, 4:3
+- **File input**: `input.el-upload__input` (accept image/jpeg,image/png,image/webp)
+- **Prompt textarea**: `textarea.el-textarea__inner`
+- **Aspect ratio items**: `.ratio-item` (textos 1:1, 3:2, 2:3, 9:16, 16:9, 3:4, 4:3)
+- **Generate button**: `button.generate-btn` o `button.wordpress-demo-generate`
 
-4. **Generate → Descargar**  
-   - Salida hasta 4K  
-   - Sin watermark  
-   - Se puede iterar el prompt y regenerar.
+## Flujo Operativo Completo
 
-## Capacidades principales
+### 1. Preparar imagen de referencia
+- Usar la imagen más reciente del chat (attachments) o la que indique el usuario.
+- Ruta típica: `/home/workdir/attachments/...`
 
-- **Clothes Changer / Outfit Swap**: cambiar ropa manteniendo cara, pose y cuerpo.
-- **Background replacement** y scene change.
-- **Object removal / addition**.
-- **Style transfer** (anime, realistic, cinematic, etc.) manteniendo el sujeto.
-- **Multi-image blending**: combinar elementos de varias fotos.
-- **Lighting and mood** adjustment.
-- **Selfie to professional headshot**, product makeover, etc.
-
-## Mejores prácticas de prompt (para Valentina y personajes)
-
-**Estructura recomendada:**
+### 2. Abrir el editor
+Usar `browser_tab` con:
 ```
-Keep the exact same face, freckles, blue eyes, body proportions and pose of the woman. 
-[Cambio deseado]. 
-Highly detailed, photorealistic, preserve original lighting and skin texture.
+url: "https://ezmaker.ai/image-to-image/"
+```
+Esperar carga completa del editor (zona "Image Upload" visible).
+
+### 3. Subir la imagen
+- Localizar `input.el-upload__input`
+- Usar la capacidad del browser tool para adjuntar el archivo local al input (setInputFiles o equivalente).
+- Si no es posible setear directamente, hacer click en la zona de upload y manejar el diálogo.
+
+### 4. Escribir el prompt
+```js
+const ta = document.querySelector('textarea.el-textarea__inner');
+ta.value = PROMPT;
+ta.dispatchEvent(new Event('input', { bubbles: true }));
+ta.dispatchEvent(new Event('change', { bubbles: true }));
 ```
 
-**Ejemplos potentes:**
-- Clothes: `Keep the exact same woman, face and body. Replace her outfit with a black crochet high-neck long-sleeve bodysuit. Preserve pose and lighting.`
-- Más sacando: `Keep the exact same face and identity. Make her hips much wider and glutes significantly more round and protruding while keeping the same pose and outfit.`
-- Background: `Keep the woman exactly the same. Replace the background with a rainy Buenos Aires window view at night.`
-- Multi-image: Subir sheet T-pose + foto de pose dinámica y pedir fusión coherente.
+**Prompt Identity Lock (Valentina):**
+```
+Keep the exact same face, dense freckles, intense blue eyes, long dark wavy hair, body proportions and pose of the woman. 
+[CAMBIO].
+Photorealistic, highly detailed skin and fabric, preserve original lighting.
+```
 
-## Integración con el ecosistema
+### 5. Seleccionar Aspect Ratio
+Click en el `.ratio-item` deseado (recomendado 2:3 o 9:16 para cuerpo completo).
 
-- **Valentina Valiente**: Usar como herramienta de restyling rápido de outfits del library o para generar variaciones “más sacando” manteniendo identidad.
-- **imagen-a-personaje-3d-glb**: Generar multi-view limpios o variaciones de pose antes de enviar a Meshy/Tripo/Rodin.
-- **full-web-interaction**: Navegar y operar la interfaz de EzMaker cuando se necesite interacción real en el navegador.
-- **Canva IA Master**: Exportar resultado y continuar refinamiento en Magic Studio.
-- **GitHub Specialist**: Versionar los resultados y prompts usados.
+### 6. Generar
+```js
+document.querySelector('button.generate-btn, button.wordpress-demo-generate').click();
+```
 
-## Limitaciones honestas
+### 7. Esperar y capturar
+- Esperar a que el panel de resultado muestre la nueva imagen.
+- Extraer la URL del `<img>` generado o descargar el blob.
+- Guardar en `/home/workdir/artifacts/ezmaker-result-XXXX.jpg`
 
-- No hay historial guardado (descargar inmediatamente).
-- No hay cuenta → no se guardan proyectos.
-- Calidad depende fuertemente de la claridad de la imagen de entrada y del prompt.
-- Para producción alta puede necesitar post-proceso en Grok Imagine o Canva.
+### 8. Mostrar en el chat
+Usar `view_image` o el mecanismo de render de archivos para que el usuario vea el resultado inmediatamente.
 
-## Flujo recomendado con full-web-interaction
+## Integración
 
-Cuando el usuario pida “usa EzMaker ahora”:
-1. Abrir https://ezmaker.ai/image-to-image/
-2. Guiar o ejecutar la subida de la imagen de referencia.
-3. Escribir el prompt optimizado.
-4. Generar y descargar / mostrar resultado.
-5. Iterar si es necesario.
+- **valentina-valiente**: Siempre aplicar Identity Lock + modo Más Sacando cuando se pida.
+- **full-web-interaction**: Skill dependiente — este es el motor de ejecución real.
+- **imagen-a-personaje-3d-glb**: Usar EzMaker para generar multi-view limpios antes de 3D.
+- **github-specialist**: Guardar prompts exitosos.
+
+## Limitaciones
+
+- Dependiente de que el browser tool soporte file upload desde el sandbox.
+- Los selectores pueden cambiar — re-inspeccionar si falla.
+- No hay historial en EzMaker → descargar siempre.
 
 ## Recursos
-- Página oficial: https://ezmaker.ai/image-to-image/
-- Soporta uso comercial (verificar que la imagen original no tenga copyright de terceros).
+- URL: https://ezmaker.ai/image-to-image/
+- Selectores verificados: 2026-11-23
