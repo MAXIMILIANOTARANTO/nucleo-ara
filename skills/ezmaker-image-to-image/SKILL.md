@@ -1,93 +1,93 @@
 ---
 name: ezmaker-image-to-image
-description: Especialista operativo en EzMaker AI Image-to-Image (https://ezmaker.ai/image-to-image/). Ejecuta el flujo completo real en el navegador — subir imagen de referencia, escribir prompt, seleccionar aspect ratio, generar, descargar y mostrar el resultado en el chat. Usa full-web-interaction + browser_tab. Ideal para Valentina, clothes changer, restyle y pipelines creativos. Triggers — ezmaker, image to image ezmaker, usa ezmaker, transformar imagen con ezmaker, ejecuta ezmaker, clothes changer ezmaker.
+description: Especialista operativo robusto en EzMaker AI Image-to-Image. Ejecuta el flujo completo (subir referencia, prompt, generar, descargar, mostrar) usando browser_tab + full-web-interaction, con manejo de errores, reintentos y fallback. Optimizado para alta calidad con mínimo gasto de tokens y solo recursos gratuitos. Triggers — ezmaker, image to image ezmaker, usa ezmaker, ejecuta ezmaker, clothes changer ezmaker, restyle con ezmaker.
 ---
 
-# EzMaker Image-to-Image — Operativo Completo
+# EzMaker Image-to-Image — Flujo Robusto y Eficiente
 
-## Propósito
+## Objetivo
 
-Ejecutar de forma real y completa el flujo de **EzMaker AI Image-to-Image** desde este chat:
+Generar imágenes de alta calidad en https://ezmaker.ai/image-to-image/ de forma **eficaz, eficiente y gratuita**, minimizando tokens del modelo y usando solo recursos web gratuitos.
 
-1. Subir una imagen de referencia
-2. Escribir el prompt optimizado
-3. Seleccionar aspect ratio
-4. Pulsar Generate
-5. Esperar el resultado
-6. Descargar la imagen generada
-7. Mostrarla aquí en el chat
+## Principios de eficiencia
 
-Todo usando `browser_tab` + `full-web-interaction`.
+- Una sola apertura de página por sesión cuando sea posible.
+- Prompts cortos y de alta densidad (Identity Lock + cambio concreto).
+- Reintentos limitados (máx 2-3).
+- Fallback inmediato si la subida automática falla.
+- Descargar y mostrar el resultado lo antes posible.
+- No inventar APIs (EzMaker no tiene API pública documentada).
 
-## Selectores Clave (actualizados 2026-11-23)
+## Selectores verificados (2026-11-23)
 
-- **File input**: `input.el-upload__input` (accept image/jpeg,image/png,image/webp)
-- **Prompt textarea**: `textarea.el-textarea__inner`
-- **Aspect ratio items**: `.ratio-item` (textos 1:1, 3:2, 2:3, 9:16, 16:9, 3:4, 4:3)
-- **Generate button**: `button.generate-btn` o `button.wordpress-demo-generate`
+- File input (oculto): `input.el-upload__input`
+- Prompt: `textarea.el-textarea__inner`
+- Aspect ratio: `.ratio-item`
+- Generate: `button.generate-btn` o `button.wordpress-demo-generate`
 
-## Flujo Operativo Completo
+## Flujo Operativo (versión robusta)
 
-### 1. Preparar imagen de referencia
-- Usar la imagen más reciente del chat (attachments) o la que indique el usuario.
-- Ruta típica: `/home/workdir/attachments/...`
+### 1. Preparación (bajo costo)
+- Tomar la imagen de referencia más reciente del chat (`/home/workdir/attachments/...`).
+- Construir prompt corto:
+  ```
+  Keep the exact same face, freckles, blue eyes and body of the woman. [CAMBIO CONCRETO]. Photorealistic, detailed skin and fabric.
+  ```
 
-### 2. Abrir el editor
-Usar `browser_tab` con:
+### 2. Abrir editor
+```js
+browser_tab({ url: "https://ezmaker.ai/image-to-image/", waitTime: 3 })
 ```
-url: "https://ezmaker.ai/image-to-image/"
-```
-Esperar carga completa del editor (zona "Image Upload" visible).
+Confirmar que la zona "Image Upload" y el textarea están presentes.
 
-### 3. Subir la imagen
+### 3. Subida de imagen (punto crítico)
+**Método preferido (si el runtime lo soporta):**
 - Localizar `input.el-upload__input`
-- Usar la capacidad del browser tool para adjuntar el archivo local al input (setInputFiles o equivalente).
-- Si no es posible setear directamente, hacer click en la zona de upload y manejar el diálogo.
+- Usar setInputFiles / equivalente del browser tool con la ruta absoluta de la imagen.
 
-### 4. Escribir el prompt
-```js
-const ta = document.querySelector('textarea.el-textarea__inner');
-ta.value = PROMPT;
-ta.dispatchEvent(new Event('input', { bubbles: true }));
-ta.dispatchEvent(new Event('change', { bubbles: true }));
-```
+**Fallback (si falla):**
+- Informar al usuario: “Sube manualmente la imagen en la zona de upload. Avisa cuando esté cargada.”
+- Continuar controlando prompt + generate + captura.
 
-**Prompt Identity Lock (Valentina):**
-```
-Keep the exact same face, dense freckles, intense blue eyes, long dark wavy hair, body proportions and pose of the woman. 
-[CAMBIO].
-Photorealistic, highly detailed skin and fabric, preserve original lighting.
-```
+### 4. Prompt + Aspect Ratio
+- Limpiar y escribir en `textarea.el-textarea__inner`
+- Disparar eventos `input` y `change`
+- Click en el `.ratio-item` deseado (2:3 o 9:16 recomendados para cuerpo)
 
-### 5. Seleccionar Aspect Ratio
-Click en el `.ratio-item` deseado (recomendado 2:3 o 9:16 para cuerpo completo).
+### 5. Generar + esperar
+- Click en Generate
+- Esperar aparición de imagen en el panel de resultado (polling ligero o wait fijo 8-15s)
+- Reintentar Generate una vez si no aparece resultado
 
-### 6. Generar
-```js
-document.querySelector('button.generate-btn, button.wordpress-demo-generate').click();
-```
+### 6. Captura y entrega
+- Extraer la URL del `<img>` de resultado o el blob
+- Guardar en `/home/workdir/artifacts/ezmaker-YYYYMMDD-HHMM.jpg`
+- Mostrar inmediatamente en el chat con `view_image` o render de archivo
 
-### 7. Esperar y capturar
-- Esperar a que el panel de resultado muestre la nueva imagen.
-- Extraer la URL del `<img>` generado o descargar el blob.
-- Guardar en `/home/workdir/artifacts/ezmaker-result-XXXX.jpg`
+## Manejo de errores
 
-### 8. Mostrar en el chat
-Usar `view_image` o el mecanismo de render de archivos para que el usuario vea el resultado inmediatamente.
+| Error | Acción |
+|-------|--------|
+| No encuentra input file | Usar fallback manual + continuar |
+| Prompt no se escribe | Reintentar con evaluate + focus |
+| Generate no responde | Esperar + re-click (máx 2) |
+| Resultado no aparece | Capturar screenshot + avisar |
+| Selectores cambiaron | Re-inspeccionar con browser_tab y actualizar skill |
 
-## Integración
+## Integración eficiente
 
-- **valentina-valiente**: Siempre aplicar Identity Lock + modo Más Sacando cuando se pida.
-- **full-web-interaction**: Skill dependiente — este es el motor de ejecución real.
-- **imagen-a-personaje-3d-glb**: Usar EzMaker para generar multi-view limpios antes de 3D.
-- **github-specialist**: Guardar prompts exitosos.
+- **valentina-valiente**: Aplicar Identity Lock + “Más Sacando” solo cuando se pida.
+- **full-web-interaction**: Motor de ejecución.
+- **imagen-a-personaje-3d-glb**: Usar este skill para generar multi-view limpios antes de 3D.
+- No llamar herramientas innecesarias.
 
-## Limitaciones
+## Limitaciones honestas
 
-- Dependiente de que el browser tool soporte file upload desde el sandbox.
-- Los selectores pueden cambiar — re-inspeccionar si falla.
-- No hay historial en EzMaker → descargar siempre.
+- Dependiente de soporte de file upload del browser runtime.
+- Sin API pública → solo automatización de UI.
+- Calidad final depende de la claridad de la imagen de entrada y del prompt.
 
 ## Recursos
 - URL: https://ezmaker.ai/image-to-image/
-- Selectores verificados: 2026-11-23
+- Selectores: 2026-11-23
+- Best practice de upload: setInputFiles sobre input oculto (Playwright-style)
