@@ -55,7 +55,7 @@ Prioriza según el objetivo:
 ### 4. Integración con Ecosistema
 - **Canva IA Master**: Usa Magic Studio para refinar conceptos 2D antes de pasar a 3D, o para generar assets de soporte.
 - **Grok Imagine**: Genera vistas multiángulo o variaciones estilizadas del personaje.
-- **Valentina Valiente**: Cuando el personaje sea Valentina, activa el skill valentina-valiente para mantener consistencia anatómica y de outfit.
+- **Valentina Valiente**: Cuando el personaje sea Valentina, activa el skill valentina-valiente para mantener consistencia anatómica y de outfit. Usa preferentemente multi-view T/A-pose + poses dinámicas de "más sacando".
 - **GitHub Specialist + Vórtice**: Versiona los GLB y el pipeline en repositorios del usuario.
 - **Full-web-interaction**: Navega y opera las webapps de Meshy, Tripo, Rodin, etc. cuando se requiera interacción real.
 - **Webapp Creator**: Genera visores Three.js o model-viewer embebidos para previsualizar el personaje 3D en webapps.
